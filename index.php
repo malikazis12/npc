@@ -57,7 +57,7 @@ if(!isset($_SESSION['sid'])){
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Title</h3>
+          <h3 class="card-title">Assalamualaikum</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -69,11 +69,11 @@ if(!isset($_SESSION['sid'])){
           </div>
         </div>
         <div class="card-body">
-          Start creating your amazing application!
+          Let's be grateful for the presence of ALLAH SWT :)
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          Footer
+          Jangan lupa bersyukur 
         </div>
         <!-- /.card-footer-->
       </div>
