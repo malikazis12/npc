@@ -26,14 +26,22 @@ $hitung = mysqli_num_rows($result);
       $data = mysqli_fetch_array($result);
       $id = $data['id'];
       $nama = $data['nama'];
-
-    //  pembuatan session
+    
+    if($_POST['ingat'] == "yes"){
+      // pembuatan cookie
+      setcookie("cid",$id, time() + (60*60*24*3), "/");
+      setcookie("cnama",$nama, time() + (60*60*24*3), "/");
+      setcookie("cemail",$email, time() + (60*60*24*3), "/");
+    }else{
+          //  pembuatan session
     $_SESSION['sid'] = $id;
     $_SESSION['snama'] = $nama;
     $_SESSION['semail'] = $id;
+    }  
+
 
     // update last log
-    $qry_update = "UPDATE users SET last_log='now()' WHERE id='$id'";
+    $qry_update = "UPDATE users SET last_log=now() WHERE id='$id'";
     $res_update = mysqli_query($con, $qry_update);
 
     // pengalihan halaman index
@@ -98,7 +106,7 @@ $hitung = mysqli_num_rows($result);
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="remember">
+              <input type="checkbox" id="remember" name="ingat" value="yes">
               <label for="remember">
                 Remember Me
               </label>
